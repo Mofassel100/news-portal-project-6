@@ -8,9 +8,9 @@
   </head>
   <body>
     <!-- header start  -->
-    <header>
+    <header class="container my-3">
         <!-- nabver add & name adn blog and top nam add  -->
-        <nav class="navbar bg-light">
+        <nav class="navbar bg-light mx-auto ">
             <div class="container-fluid">
               <a class="navbar-brand text-primary">Daily Newsparer</a>
               <form class="d-flex" role="search">
@@ -31,50 +31,38 @@
         <section class="container">
             <div>
                 <ul id="catagory-menu" class="d-flex fs-6 mx-aotu text  list-unstyled my-lg-5">
-
                 </ul>
             </div>
         </section>
-        <!-- detail -->
-        <section class="container">
-            
-                <div id="news-information" class="card border-primary p-2" >
-                  </div>
-            
+        <!-- spinner  added  -->
+        <section class="container"> 
+
+          <div id="loading-spiner" class="d-flex align-items-center visually-hidden">
+            <strong>Loading...</strong>
+            <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+          </div>
         </section>
-        <!-- ---- -->
-        <!-- moals opens -->
-       <!-- Button trigger modal -->
-
-
-<!-- Modal -->
+        <!-- ---------------- -->
+        <!-- All news catagory information -->
+    <section class="container mx-auto ">
+                <div id="news-information" class="p-2" >
+                </div>
+    </section>
+        <!-- ----------------- All catagory end ------------------- -->
+        <!--  --------News detail informaion && Modals addee -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div id="modal-news" class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div id="modal-news" class="modal-content">
     </div>
   </div>
 </div>
-        <!-- ----- -->
 
-          
-            
-        
-
-         
-        <!-- ----- -->
+        <!-- -- Modals End Infomation--- -->   
     </main>
+    <!--  main End -->
+    <!-- ----------news java fils added -->
    <script src="news.js"></script>
+   <!-- boostraps filst Addess -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>
