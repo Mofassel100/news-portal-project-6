@@ -66,6 +66,9 @@ const allDAta =await allNewCatagory(id)
 const allDatanews = allDAta.data;
 
 
+const madalBodyNews = document.getElementById('modal-news');
+
+
 
     const createDiv = document.getElementById('news-information');
     createDiv.textContent = ''
@@ -79,7 +82,7 @@ const allDatanews = allDAta.data;
 
  const {_id,author,image_url,title,rating,thumbnail_url,details}= data; 
        // console.log(d)
-    
+    madalBodyNews.innerHTML= `<h5>${title} </h5> <img src="${image_url}" class="img-fluid rounded" alt="..."> <h1>${author.name ? author.name : "Not Names Found"}</h1>`
         const div = document.createElement('div');
          div.classList.add('col');
         div.innerHTML = `     
@@ -107,12 +110,14 @@ const allDatanews = allDAta.data;
 
 // Modals show infomation -----------
 
-const ModalsNewsShows = (image_url, details)=>{
+const ModalsNewsShows =async (image_url, details)=>{
     console.log( image_url,details)
 
-    // const newsdata = await allNewCatagory(NewsId);
-    // const InformationNews = newsdata.data;
-    // const madalBodyNews = document.getElementById('modal-news');
+    const newsdata = await allNewCatagory(details);
+    const InformationNews = newsdata.data;
+    console.log(newsdata);
+
+
 
     // InformationNews.forEach(newsData => {
     //     const {_id,author,image_url,title,rating,thumbnail_url,details}= newsData;
