@@ -11,12 +11,12 @@
     <header class="container my-3">
         <!-- nabver add & name adn blog and top nam add  -->
         <nav class="navbar bg-light mx-auto ">
-            <div class="container-fluid">
+            <div class="container ">
               <a class="navbar-brand text-primary">Daily Newsparer</a>
               <form class="d-flex" role="search">
                
                 <button class="btn btn-outline-success mx-1" type="text">All News</button>
-                <button class="btn btn-outline-success mx-1" type="submit">Home</button>
+                <button class="btn btn-outline-success mx-1" type="text" id="btn-mama"><a href="http://127.0.0.1:5500/bloger.html"> Bloger</a></button>
               </form>
             </div>
           </nav>
@@ -30,11 +30,15 @@
         <!-- all news catagory name add start  -->
         <section class="container">
             <div>
-                <ul id="catagory-menu" class="d-flex fs-6 mx-aotu text  list-unstyled my-lg-5">
+                <ul id="catagory-menu" class=" row row-cols-auto fs-6  text   list-unstyled my-lg-5">
                 </ul>
             </div>
         </section>
+       <!-- total page number show -->
+       <h1 class="text-center my-2"> Total News Page NO :  <span id="total-page">0</span></h1>
+       <!-- ------------ -->
         <!-- spinner  added  -->
+        
         <section class="container"> 
 
           <div id="loading-spiner" class="d-flex align-items-center visually-hidden">
@@ -57,8 +61,9 @@
   </div>
 </div>
 
-        <!-- -- Modals End Infomation--- -->   
-    </main>
+        <!-- -- Modals End Infomation--- --> 
+        
+   
     <!--  main End -->
     <!-- ----------news java fils added -->
    <script src="news.js"></script>

@@ -41,10 +41,12 @@ const allNewCatagory =async (catagory_id)=>{
 const detail = async(id)=>{
 const allDAta =await allNewCatagory(id)
 const allDatanews = allDAta.data;
+math(allDatanews)
 const createDiv = document.getElementById('news-information');
 createDiv.textContent = ''
 LoadSpiner.classList.remove('visually-hidden') 
 allDatanews.forEach(data => {
+  
   LoadSpiner.classList.add('visually-hidden')
  const {_id,author,image_url,title,rating,details,total_view}= data; 
 //  ----news paramiter -------
@@ -96,8 +98,8 @@ const newsDataRetunr = await newsDetailUrl(news);
 const newsDetailData= newsDataRetunr.data;
 const madalBodyNews = document.getElementById("modal-news");
 newsDetailData.forEach(newsDe =>{
-    const {author,details,image_url,rating,thumbnail_url,title,total_view}=newsDe;
-  madalBodyNews.innerHTML =`<div class="modal-header">
+const {author,details,image_url,rating,thumbnail_url,title,total_view}=newsDe;
+madalBodyNews.innerHTML =`<div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">${title}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -119,4 +121,17 @@ newsDetailData.forEach(newsDe =>{
 
 
 // -----------------------news details end ----------
+
+
+const math = math=>
+{ 
+  const totalPage =document.getElementById('total-page');
+  // const totalPageSet = innerText;
+  // const totalConvert =parseInt(totalPageSet)
+const totalCalcolaPage = math.map(data => (data));
+totalPage.innerText = totalCalcolaPage.length;
+
+
+}  
+
 
