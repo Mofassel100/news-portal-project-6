@@ -10,19 +10,16 @@ const newsDataLoadded = async ()=>{
   
   const LoadSpiner =document.getElementById('loading-spiner');
   
-  
   const catagoryNameSet = async ()=> {
   const allCatagoryData = await newsDataLoadded();
   const AllCatagoryMenu= document.getElementById('catagory-menu');
-  
-  
   
   allCatagoryData.forEach(newsTitle => {
     
   const {category_id,category_name} =newsTitle;
       allNewCatagory(category_id)
   const li = document.createElement('li');
-      li.innerHTML = ` <li class="px-3 text-primary  "  onclick="detail('${category_id}')">${category_name}</li>`;
+      li.innerHTML = ` <li class="px-3 text-primary  "  onclick="AllNewsCatagory('${category_id}')">${category_name}</li>`;
   AllCatagoryMenu.appendChild(li)
   });
   }
@@ -38,7 +35,7 @@ const newsDataLoadded = async ()=>{
   }
   // ----All news in a Category All information----
   
-  const detail = async(id)=>{
+  const AllNewsCatagory = async(id)=>{
   const allDAta =await allNewCatagory(id)
   const allDatanews = allDAta.data;
   TotalPageCount(allDatanews)
@@ -48,10 +45,6 @@ const newsDataLoadded = async ()=>{
   LoadSpiner.classList.remove('visually-hidden') 
   allDatanews.forEach(data => {
 
-    const [dd] =data(total_view)
-    // const sortable = 
-    //   Object.values(data.total_view).sort((a,b) => a-b)
-      console.log(sortable)
     LoadSpiner.classList.add('visually-hidden')
    const {_id,author,image_url,title,rating,details,total_view}= data; 
   //  ----news paramiter -------
