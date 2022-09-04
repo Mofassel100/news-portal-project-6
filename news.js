@@ -42,11 +42,13 @@ const newsDataLoadded = async ()=>{
   const allDAta =await allNewCatagory(id)
   const allDatanews = allDAta.data;
   TotalPageCount(allDatanews)
+  
   const createDiv = document.getElementById('news-information');
   createDiv.textContent = ''
   LoadSpiner.classList.remove('visually-hidden') 
   allDatanews.forEach(data => {
-    
+    // const sortable = 
+    //   Object.values.(data).sort((a,b) => a-b)
     LoadSpiner.classList.add('visually-hidden')
    const {_id,author,image_url,title,rating,details,total_view}= data; 
   //  ----news paramiter -------
@@ -84,8 +86,6 @@ const newsDataLoadded = async ()=>{
   const url = `https://openapi.programming-hero.com/api/news/${news_id}`
   const res = await fetch(url)
   const newsDetailsData = await res.json();
-  console.log(news_id, newsDetailsData.data);
-  
   return newsDetailsData;
   
   
