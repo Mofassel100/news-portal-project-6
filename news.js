@@ -47,8 +47,11 @@ const newsDataLoadded = async ()=>{
   createDiv.textContent = ''
   LoadSpiner.classList.remove('visually-hidden') 
   allDatanews.forEach(data => {
+
+    const [dd] =data(total_view)
     // const sortable = 
-    //   Object.values.(data).sort((a,b) => a-b)
+    //   Object.values(data.total_view).sort((a,b) => a-b)
+      console.log(sortable)
     LoadSpiner.classList.add('visually-hidden')
    const {_id,author,image_url,title,rating,details,total_view}= data; 
   //  ----news paramiter -------
